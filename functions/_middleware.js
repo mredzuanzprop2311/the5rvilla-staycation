@@ -103,30 +103,32 @@ function init(){
 
       const requestId=ref.id;
       const adminRequestUrl=ADMIN_URL+"?request="+encodeURIComponent(requestId);
-      const message=`🏡 *BOOKING ENQUIRY – THE 5R VILLA*
-
-Hi Admin, saya ingin membuat tempahan.
-
-👤 *Nama:* ${name}
-📞 *Telefon:* ${phone}
-📍 *Tinggal di:* ${residence}
-
-📅 *Check-in:* ${checkIn}
-📅 *Check-out:* ${checkOut}
-🌙 *Jumlah malam:* ${nights}
-👥 *Jumlah tetamu:* ${guests}
-
-🟢 Tarikh telah disemak melalui Live Calendar THE 5R VILLA semasa borang dihantar.
-
-📝 *REQUEST ID:* ${requestId.slice(0,8).toUpperCase()}
-🟡 *STATUS: PENDING*
-Data telah dihantar ke Admin. Tidak perlu isi semula.
-
-🔔 *ADMIN: BOOKING BARU MENUNGGU TINDAKAN*
-Sila semak di Guest Requests.
-
-👉 *BUKA ADMIN BOOKING:*
-${adminRequestUrl}`;
+      const message=[
+        "🏡 *BOOKING ENQUIRY – THE 5R VILLA*",
+        "",
+        "Hi Admin, saya ingin membuat tempahan.",
+        "",
+        "👤 *Nama:* "+name,
+        "📞 *Telefon:* "+phone,
+        "📍 *Tinggal di:* "+residence,
+        "",
+        "📅 *Check-in:* "+checkIn,
+        "📅 *Check-out:* "+checkOut,
+        "🌙 *Jumlah malam:* "+nights,
+        "👥 *Jumlah tetamu:* "+guests,
+        "",
+        "🟢 Tarikh telah disemak melalui Live Calendar THE 5R VILLA semasa borang dihantar.",
+        "",
+        "📝 *REQUEST ID:* "+requestId.slice(0,8).toUpperCase(),
+        "🟡 *STATUS: PENDING*",
+        "Data telah dihantar ke Admin. Tidak perlu isi semula.",
+        "",
+        "🔔 *ADMIN: BOOKING BARU MENUNGGU TINDAKAN*",
+        "Sila semak di Guest Requests.",
+        "",
+        "👉 *BUKA ADMIN BOOKING:*",
+        adminRequestUrl
+      ].join("\\n");
 
       form.reset();
       window.updateCustomerLiveStatus?.();
