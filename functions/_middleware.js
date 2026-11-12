@@ -136,7 +136,7 @@ function init(){
       window.location.href="https://wa.me/"+ADMIN_WHATSAPP+"?text="+encodeURIComponent(message);
     }catch(err){
       console.error("Public booking Firebase save failed",err);
-      alert("❌ Permintaan belum dihantar kerana rekod Guest Requests gagal disimpan. Sila cuba lagi.\n\n"+(err?.message||err));
+      alert("❌ Permintaan belum dihantar kerana rekod Guest Requests gagal disimpan. Sila cuba lagi.\\n\\n"+(err?.message||err));
     }finally{
       if(btn){btn.disabled=false;if(oldLabel!==undefined)btn.innerHTML=oldLabel;}
     }
